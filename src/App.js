@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import './App.css';
 import SearchIcon from './search.svg';
+import MovieCard from './MovieCard';
 // Movie api key = e8db7598
 
 const API_URL = 'http://www.omdbapi.com/?apikey=e8db7598'; 
@@ -43,20 +44,7 @@ const App = () => {
             onClick={() => {}}
             />
             <div className="container">
-                <div className="movie">
-                    <div>
-                        <p>{movie1.Year}</p>
-                    </div>
-                    <div>
-                        <img src={movie1.Poster !=='N/A' ? movie1.Poster : "https://via.placeholder.com/400"} alt={movie1.Title} />
-                    </div>
-                    <div>
-                        <span>{movie1.Type}</span>
-                        <h3>{movie1.Title}</h3>
-                    </div>
-                    
-                </div>
-           
+                <MovieCard movie1={movie1} />
         </div>
       
     </div>
